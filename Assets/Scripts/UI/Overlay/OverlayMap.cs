@@ -451,7 +451,10 @@ public class OverlayMap : MonoBehaviour
             for (int x = 0; x < sizeX; x++)
             {
                 float v = valueAt(x, y, WorldController.Instance.cameraController.CurrentLayer);
-                Debug.Assert(v >= 0 && v < 256, "v >= 0 && v < 256");
+                if (v >= 0 && v < 256)
+                {
+                    Debug.Log("v >= 0 && v < 256");
+                }
 
                 int sampleX = ((int)v % 256) * colorMapWidth;
 

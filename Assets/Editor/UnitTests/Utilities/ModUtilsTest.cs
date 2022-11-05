@@ -93,10 +93,9 @@ public class ModUtilsTest
     }
 
     [Test]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Test_Round_NegitiveDigits()
     {
         float value_2 = 9.9998f;
-        ModUtils.Round(value_2, -2);
+        Assert.Throws<ArgumentOutOfRangeException>(() => ModUtils.Round(value_2, -2));
     }
 }

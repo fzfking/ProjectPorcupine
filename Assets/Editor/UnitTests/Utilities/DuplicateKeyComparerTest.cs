@@ -216,11 +216,11 @@ public class DuplicateKeyComparerTest
      */
 
     [Test]
-    [ExpectedException(typeof(NullReferenceException))]
     public void Compare_NullAgainstNull()
     {
         DuplicateKeyComparer<string> dkc_int = new DuplicateKeyComparer<string>();
-        dkc_int.Compare(null, null);
+        Assert.Throws<NullReferenceException>(() => dkc_int.Compare(null, null));
+
     }
 
     /*
@@ -262,29 +262,27 @@ public class DuplicateKeyComparerTest
      */
 
     [Test]
-    [ExpectedException(typeof(NullReferenceException))]
     public void Compare_NullAgainstValue()
     {
         string test_string = "test";
         DuplicateKeyComparer<string> dkc_int = new DuplicateKeyComparer<string>();
-        dkc_int.Compare(null, test_string);
+        Assert.Throws<NullReferenceException>(() => dkc_int.Compare(null, test_string));
     }
 
     [Test]
-    [ExpectedException(typeof(NullReferenceException))]
     public void Compare_NullAgainstValue_equalValueAtEnd_False()
     {
         string test_string = "test";
         DuplicateKeyComparer<string> dkc_int = new DuplicateKeyComparer<string>(false);
-        dkc_int.Compare(null, test_string);
+        Assert.Throws<NullReferenceException>(() => dkc_int.Compare(null, test_string));
     }
 
     [Test]
-    [ExpectedException(typeof(NullReferenceException))]
     public void Compare_NullAgainstValue_equalValueAtEnd_True()
     {
         string test_string = "test";
         DuplicateKeyComparer<string> dkc_int = new DuplicateKeyComparer<string>(true);
-        dkc_int.Compare(null, test_string);
+        Assert.Throws<NullReferenceException>(() => dkc_int.Compare(null, test_string));
+
     }
 }

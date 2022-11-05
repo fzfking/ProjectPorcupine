@@ -7,6 +7,7 @@
 // ====================================================
 #endregion
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -147,8 +148,8 @@ public class ParametersEditorTest
     [Test]
     public void ParameterChangeFloatValue()
     {
-        param1["gas_limit"].ChangeFloatValue(1.0f);
-        Assert.That(param1["gas_limit"].ToString(), Is.EqualTo("1.2"));
+        param1["gas_limit"].ChangeFloatValue(1.2f);
+        Assert.That(param1["gas_limit"].ToString(), Is.EqualTo(1.2f.ToString(CultureInfo.CurrentCulture)));
     }
 
     [Test]

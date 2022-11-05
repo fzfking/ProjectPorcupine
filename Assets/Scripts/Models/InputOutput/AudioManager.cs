@@ -50,7 +50,7 @@ public class AudioManager
     /// <returns>AudioClip form the specified category with the specified name.</returns>
     public static AudioClip GetAudio(string categoryName, string audioName)
     {
-        AudioClip clip = new AudioClip();
+        AudioClip clip;
 
         string audioNameAndCategory = categoryName + "/" + audioName + ".ogg";
 

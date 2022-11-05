@@ -30,10 +30,9 @@ public class PowerNetworkTest
     }
 
     [Test]
-    [ExpectedException(typeof(ArgumentNullException))]
     public void PlugInArgumentNullException()
     {
-        powerNetwork.PlugIn(null);
+        Assert.Throws<ArgumentNullException>(() => powerNetwork.PlugIn(null));
     }
 
     [Test]

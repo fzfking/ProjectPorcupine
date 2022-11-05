@@ -58,11 +58,10 @@ public class LuaFunctionsTest
     }
 
     [Test]
-    [ExpectedException(typeof(System.NullReferenceException))]
     public void Test_LoadScript_Null()
     {
         // Try loading a Lua Code from a null text
-        functions.LoadScript(null, string.Empty);
+        Assert.Throws<NullReferenceException>(() => functions.LoadScript(null, string.Empty));
     }
 
     [Test]
